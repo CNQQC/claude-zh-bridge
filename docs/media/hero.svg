@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+<title id="title">Claude 中文桥 · Claude ZH Bridge</title><desc id="desc">中文表达，英文沟通，中文阅读。在原来的 Claude 界面里继续工作。</desc>
+<rect width="1280" height="380" fill="#f6f4ef"/>
+<g fill="none" stroke="#d8d4c9"><path d="M64 52H1216M64 324H1216"/></g>
+<text x="64" y="88" fill="#777468" font-family="Arial, sans-serif" font-size="13" letter-spacing="3">CLAUDE ZH BRIDGE</text>
+<text x="60" y="192" fill="#25251f" font-family="PingFang SC, Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="78" font-weight="600" letter-spacing="-2">Claude 中文桥</text>
+<text x="65" y="247" fill="#69665c" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="23">中文表达，英文沟通，中文阅读。</text>
+<g transform="translate(878 103)"><path d="M0 77C62 77 49 0 108 0S157 77 220 77" fill="none" stroke="#bd4c36" stroke-width="5" stroke-linecap="round"/><path d="M0 104H220" fill="none" stroke="#25251f" stroke-width="1.5"/><g fill="#25251f" font-family="Arial, PingFang SC, sans-serif" font-size="20" text-anchor="middle"><text x="0" y="150">中文</text><text x="110" y="150">EN</text><text x="220" y="150">中文</text></g><circle cx="0" cy="77" r="6" fill="#bd4c36"/><circle cx="220" cy="77" r="6" fill="#bd4c36"/></g>
+<text x="65" y="354" fill="#777468" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.2">IN-PLACE TRANSLATION · BATCHED REQUESTS · DURABLE LOCAL CACHE</text>
+</svg>

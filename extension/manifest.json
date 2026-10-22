@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Claude 中文桥",
+  "description": "在 Claude 聊天界面内翻译输入、回复和会话标题，合并请求并长期复用本机译文缓存。",
+  "version": "1.6.0",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://api.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "Claude 中文桥 · DeepSeek 设置",
+    "default_popup": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*"
+      ],
+      "js": [
+        "scope.js",
+        "translator.js",
+        "sidebar.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

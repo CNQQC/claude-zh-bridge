@@ -1,0 +1,29 @@
+name: 兼容性或功能问题 / Bug
+description: 请勿上传 Key、Cookie、真实聊天、账户或本机路径。
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 中文桥、Claude 与系统版本
+      placeholder: 中文桥 1.6.0 / Claude Desktop 3.1623.0 / macOS 14+
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: 入口
+      options:
+        - Chrome Chat
+        - Desktop Chat
+        - Desktop Code
+        - 安装与恢复
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 最小复现、实际与预期结果
+      description: 使用虚构内容。附图前请裁去账户、历史与路径。
+    validations:
+      required: true

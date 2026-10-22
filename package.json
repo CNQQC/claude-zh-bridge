@@ -1,0 +1,24 @@
+{
+  "name": "claude-zh-bridge",
+  "version": "1.6.0",
+  "private": true,
+  "description": "In-place Chinese translation for Claude Chat and Desktop Code, with batched requests and durable local caching.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test extension/tests/*.test.cjs desktop/bridge/tests/*.test.cjs desktop/bridge/tests/browser-regression/*.test.cjs",
+    "audit:public": "python3 scripts/audit_public.py",
+    "package:extension": "npm run build && python3 scripts/package_extension.py",
+    "build:mac": "npm run build && python3 desktop/patcher/build.py"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CNQQC/claude-zh-bridge.git"
+  }
+}

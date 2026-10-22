@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude 中文桥 · 翻译设置</title><link rel="stylesheet" href="options.css"></head>
+<body><main><header><span>Claude 中文桥 · 开源版</span><h1>翻译设置</h1></header>
+<dl><div><dt>模型</dt><dd><code>deepseek-flash</code></dd></div><div><dt>思考模式</dt><dd>关闭</dd></div><div><dt>翻译缓存</dt><dd>保存在本机 · 刷新和切换对话直接复用</dd></div></dl>
+<form id="settings"><label for="key">DeepSeek API Key</label><input id="key" name="key" type="password" placeholder="填写自己的 API Key" autocomplete="off" spellcheck="false" required><p>开源版不含任何 Key。Key 仅在本次浏览器会话的受限后台存储中保存，重启浏览器后需要重新填写；已保存的译文仍可使用。待翻译文字发往 DeepSeek 接口，按你的账户用量计费。</p><button id="save" type="submit">验证并启用</button></form>
+<section class="preferences"><label>中文输入译成英文再发送<input id="input" type="checkbox" checked></label><label>消息、回复和会话标题显示中文<input id="output" type="checkbox" checked></label></section>
+<section><button id="retry" type="button">重试未完成的翻译</button><button id="test" type="button">测试中英翻译</button><button id="clear" type="button">清除本次会话的 Key</button><p id="status" role="status" aria-live="polite">正在读取设置…</p><pre id="result" hidden></pre></section></main><script src="options.js"></script></body></html>

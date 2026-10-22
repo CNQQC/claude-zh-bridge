@@ -1,0 +1,21 @@
+/* Preserve the original DOM and all native Claude message actions. */
+[data-czt-original-hidden] { display: none !important; }
+[data-czt-translating] { cursor: progress; }
+.czt-translation { color: inherit; font: inherit; line-height: inherit; overflow-wrap: anywhere; }
+.czt-user-original { white-space: pre-wrap; }
+.czt-translation pre { overflow: auto; white-space: pre; }
+.czt-translation p { margin-block: 0 1em; }
+.czt-translation h1,.czt-translation h2,.czt-translation h3 { margin-block: 1em .5em; font-weight: 600; }
+.czt-translation ul,.czt-translation ol { padding-left: 1.5em; }
+.czt-translation table { border-collapse: collapse; }
+.czt-translation td,.czt-translation th { padding: .4em .7em; border: 1px solid #8885; }
+.czt-translation a { text-decoration: underline; }
+/* No additional row, label or message spacing. The language toggle appears on
+   hover or keyboard focus, and stays discoverable on touch devices. */
+.czt-controls { position: relative; height: 0; margin: 0; padding: 0; border: 0; }
+.czt-controls button { position: absolute; right: 0; bottom: 2px; opacity: 0; pointer-events: none; font: 11px/20px system-ui,sans-serif; color: inherit; cursor: pointer; background: var(--color-bg-100,Canvas); border: 1px solid #8884; border-radius: 5px; padding: 0 5px; }
+.czt-translation:hover + .czt-controls button,
+[data-czt-toggle-source]:hover + .czt-translation + .czt-controls button,
+.czt-controls:hover button,.czt-controls:focus-within button { opacity: .7; pointer-events: auto; }
+.czt-controls button:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 2px; }
+@media (hover: none) { .czt-controls button { opacity: .55; pointer-events: auto; } }

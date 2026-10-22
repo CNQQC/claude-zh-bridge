@@ -1,0 +1,38 @@
+name: Publish public release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag, for example v1.6.0
+        required: true
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: sh scripts/test_native.sh
+      - run: python3 scripts/audit_public.py --history
+      - run: npm run package:extension
+      - run: npm run build:mac
+      - name: Package and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          ditto -c -k --sequesterRsrc --keepParent 'dist/Claude 中文桥.app' "dist/claude-zh-bridge-macos-arm64-$version.zip"
+          python3 scripts/audit_public.py --path dist
+          cd dist
+          shasum -a 256 *.zip > SHA256SUMS.txt
+          gh release create "$RELEASE_TAG" *.zip SHA256SUMS.txt --title "$RELEASE_TAG" --generate-notes
